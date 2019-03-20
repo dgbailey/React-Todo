@@ -7,6 +7,7 @@ const TodoList = (props) => {
 
     return(
         <div className = 'list-container'>
+            <ul>
             {props.itemList.map(
                 (listValue) => {
                     return(
@@ -15,6 +16,7 @@ const TodoList = (props) => {
                     );
                 }
             )}
+            </ul>
         </div>
     );
 }
