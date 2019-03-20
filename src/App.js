@@ -22,8 +22,10 @@ class App extends React.Component {
         }]
       ,
       task:'',
-      id:Math.random(),
-      completed:false
+      id:'',
+      completed:false,
+      default:"Enter todo here"
+      
     } 
   }
 
@@ -39,7 +41,7 @@ class App extends React.Component {
     //create new form template
     const newForm = {
       task:this.state.task,
-      id:this.state.id,
+      id:Math.random(),
       completed:this.state.completed
     }
     //log entry text fill new form template and update state
@@ -47,7 +49,16 @@ class App extends React.Component {
       
       
       {masterList:[...this.state.masterList,newForm]}  
-    );
+    )
+    
+    function clearform(){
+      document.getElementById('todoform').reset()
+    }
+
+
+    
+    clearform();
+   
 
   }
   // you will need a place to store your state in this component.

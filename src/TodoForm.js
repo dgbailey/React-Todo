@@ -3,9 +3,10 @@ import React from 'react';
 const TodoForm = (props) => {
     return  (
         <div className='form-container'>
-            <form>
+            <form id='todoform'>
                 <input 
-                value = {props.task}
+                placeholder = 'Enter todo here'
+                // value = {props.task}
                 onChange ={props.formChange}>
                 </input>
             </form>
