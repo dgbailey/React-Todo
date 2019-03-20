@@ -8,7 +8,7 @@ class App extends React.Component {
 
     //state storage
     this.state ={
-      
+      //mutable list of task objects
       masterList : 
         [{
           task: 'Organize Garage',
@@ -28,14 +28,14 @@ class App extends React.Component {
       
     } 
   }
-
+  //method for form onchange event in JSX TodoForm
   handleChanges = (event) =>{
-    console.log(event.target.value);
+    
     this.setState(
       {task: event.target.value}
     )
   }
-
+//method for on click event in JSX TodoForm
   logFormEntry = (event) =>{
     event.preventDefault();
     //create new form template
@@ -56,14 +56,12 @@ class App extends React.Component {
     }
 
 
-    
+    //clear form after state change submission
     clearform();
    
 
   }
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
+  
   render() {
     return (
       <div className='app-container'>
