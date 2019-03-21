@@ -84,14 +84,27 @@ class App extends React.Component {
     this.setState({masterList:updatedList});
     
   }
-   //passing callbacks below so that form components can update their own state
+
+  clearComplete = () =>{
+    console.log('instantiating');
+    //this notation avoids us having to explicitly bind this keyword further down the road
+    //update state list onClick
+    //using new copy of list that has been
+    //filtered for items with complete:true
+    const newlist = this.state.masterList.filter(
+      currentItem => !currentItem.completed
+    )
+
+    this.setState({masterList:newlist});
+  }
+   //passing callbacks below so that form components can update state?
   render() {
     return (
       <div className='app-container'>
         <h2>Welcome to your Todo App!</h2>
         <TodoList itemList = {this.state.masterList} markDone={this.crossOff}/>
        
-        <TodoForm formSubmit = {this.logFormEntry} formChange = {this.handleChanges}/>
+        <TodoForm formSubmit = {this.logFormEntry} formChange = {this.handleChanges} clearComplete ={this.clearComplete}/>
       </div>
     );
   }
