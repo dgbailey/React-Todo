@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './TodoList';  
 import TodoForm from './TodoForm';
+import './App.css';
 
 class App extends React.Component {
   constructor(){
@@ -69,7 +70,8 @@ class App extends React.Component {
     //you need to modify state at central source not component
     
     const updatedList = this.state.masterList.map(
-      (listItem) =>{
+      (listItem,index) =>{
+        
         
         if(id === listItem.id){
           listItem.completed = !listItem.completed;

@@ -11,8 +11,8 @@ const TodoForm = (props) => {
                 onChange ={props.formChange}>
                 </input>
             </form>
-            <button className='submitBtn' onClick={props.formSubmit}>Add New</button>
-            <button className='clear' onClick={props.clearComplete}>Clear Completed</button>
+            <button className='submitBtn' onClick={props.formSubmit}></button>
+            <button className='clear' onClick={props.clearComplete}></button>
         </div>
     );//need to look up more on synthetic events here
 }
