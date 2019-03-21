@@ -12,7 +12,7 @@ const TodoList = (props) => {
                 (listValue) => {
                     return(
                     //return single todo JSX elements within this List container
-                    <Todo singleDo = {listValue}/>
+                    <Todo singleDo = {listValue} markDone={props.markDone}/>
                     );
                 }
             )}

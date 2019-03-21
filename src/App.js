@@ -13,19 +13,21 @@ class App extends React.Component {
         [{
           task: 'Organize Garage',
           id: 1528817077286,
-          completed: false
+          completed: false,
+          name:''
         },
         {
           task: 'Bake Cookies',
           id: 1528817084358,
-          completed: false
+          completed: false,
+          name: ''
         }]
       ,
       task:'',
       id:'',
       completed:false,
-      default:"Enter todo here"
-      
+      default:"Enter todo here",
+      name:''
     } 
   }
   //method for form onchange event in JSX TodoForm
@@ -61,12 +63,34 @@ class App extends React.Component {
    
 
   }
-  
+
+  crossOff = (id) =>{
+    //add true to state completed on click
+    //you need to modify state at central source not component
+    
+    const updatedList = this.state.masterList.map(
+      (listItem) =>{
+        
+        if(id === listItem.id){
+          listItem.completed = !listItem.completed;
+        }
+        else {}
+
+        return listItem;
+      }
+    
+    )
+    
+    this.setState({masterList:updatedList});
+    
+  }
+   //passing callbacks below so that form components can update their own state
   render() {
     return (
       <div className='app-container'>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList itemList = {this.state.masterList}/>
+        <TodoList itemList = {this.state.masterList} markDone={this.crossOff}/>
+       
         <TodoForm formSubmit = {this.logFormEntry} formChange = {this.handleChanges}/>
       </div>
     );
