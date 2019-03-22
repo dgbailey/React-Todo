@@ -2,3 +2,7 @@
     text-decoration: line-through;
     background:rgb(150, 255, 150);
 }
+
+li:hover{
+    cursor: pointer;
+}

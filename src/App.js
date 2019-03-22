@@ -56,6 +56,7 @@ class App extends React.Component {
     
     function clearform(){
       document.getElementById('todoform').reset()
+      
     }
 
 
